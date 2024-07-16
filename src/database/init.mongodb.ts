@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
+import appConfig from "../configs/config.mongodb";
 
-const connectString = `mongodb://localhost:27017/shopDEV`;
+const { host, name, port } = appConfig.db;
+const connectString = `mongodb://${host}:${port}/${name}`;
+console.log(`connectString ::: ${connectString}`);
 
 class Database {
     static instance: any;
