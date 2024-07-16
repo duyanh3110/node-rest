@@ -7,11 +7,19 @@ import bodyParser from "body-parser";
 import morgan from "morgan";
 import helmet from "helmet";
 import compression from "compression";
+import instanceMongoDb from "./database/init.mongodb";
+import { checkOverload } from "./helpers/check.connect";
 
 /**
  * App Variables
  */
 const app = express();
+
+/**
+ * DB Initialization
+ */
+const db = instanceMongoDb;
+checkOverload();
 
 /**
  *  App Configuration

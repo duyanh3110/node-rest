@@ -8,16 +8,17 @@
         "build": "tsc",
         "predev": "npm run build",
         "dev": "node dist/server.js",
-        "lint": "prettier 'src/*.ts' --write"
+        "lint": "prettier --write ."
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
         "body-parser": "^1.20.2",
+        "compression": "^1.7.4",
         "express": "^4.19.2",
-        "morgan": "^1.10.0",
-        "compression": "^1.7.4"
+        "mongoose": "^8.5.1",
+        "morgan": "^1.10.0"
     },
     "devDependencies": {
         "@types/compression": "^1.7.5",
