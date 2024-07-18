@@ -3,15 +3,17 @@ import keyTokenModel from "../models/keytoken.model";
 const createKeyToken = async ({
     userId,
     publicKey,
+    privateKey,
 }: {
     userId: string;
     publicKey: string;
+    privateKey: string;
 }): Promise<string | null> => {
     try {
-        const publicKeyString = publicKey.toString();
         const token = await keyTokenModel.create({
             user: userId,
-            publicKey: publicKeyString,
+            publicKey,
+            privateKey,
         });
 
         return token ? token.publicKey : null;
